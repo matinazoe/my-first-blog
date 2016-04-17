@@ -8,17 +8,13 @@
         </div>
 
         <div>
-            <p>published: 07.04.2016, 22:45:53</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 10.04.2016, 13:52:18</p>
-            <h2><a href="">My second post</a></h2>
-            <p>"It's not in the best intrest of any state to have effective education.  
-			This makes free citizens!  And free citizens are dangerous to the state" </p>
-            <p> Manos Chatzidakis.</p>
+            {% for post in posts %}
+			    <div>
+					<p>published: {{ post.published_date }}</p>
+					<h1><a href="">{{ post.title }}</a></h1>
+					<p>{{ post.text|linebreaks }}</p>
+				</div>
+			{% endfor %}
         </div>
     </body>
 </html>
